@@ -1,7 +1,13 @@
+using BlazingPizza.Data;
+
 var builder = WebApplication.CreateBuilder(args);
 
+// Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
+// Register the pizzas service
+builder.Services.AddSingleton<PizzaService>();
+
 
 var app = builder.Build();
 
